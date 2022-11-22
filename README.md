@@ -7,5 +7,5 @@ Members:
 - James Khalil (30121419)
 - Sneh Patel (30086076)
 
-And-tree based search method coded in pyton.
+And-tree based search method coded in python.
 
