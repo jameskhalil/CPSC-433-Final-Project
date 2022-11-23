@@ -96,7 +96,7 @@ def file_Parser(fileName):
     
     myfile.close()
 
-
+# Just for checking
 file_Parser(fileName)
 
 print("Game Slots: ", gameSlots)
