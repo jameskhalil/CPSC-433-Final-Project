@@ -21,128 +21,52 @@ preferences = []
 pair = []
 partialAssign = []
 
-# def file_Parser(fileName):
-#     myfile = open(fileName, 'r')    # Open input file
-
-#     while(True):
-
-#         temp = []
-
-#         line = myfile.readline()
-
-#         if "Game slots:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 gameSlots.append(temp)
-#                 line = myfile.readline()
-        
-#         if "Practice slots:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 practiceSlots.append(temp)
-#                 line = myfile.readline()
-            
-#         if "Games:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 games.append(temp)
-#                 line = myfile.readline()
-            
-#         if "Practices:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 practices.append(temp)
-#                 line = myfile.readline()
-
-#         if "Not compatible:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 notCompatible.append(temp)
-#                 line = myfile.readline()
-
-#         if "Unwanted:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 unwanted.append(temp)
-#                 line = myfile.readline()
-        
-#         if "Preferences:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 preferences.append(temp)
-#                 line = myfile.readline()
-
-#         if "Pair:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 pair.append(temp)
-#                 line = myfile.readline()
-        
-#         if "Partial assignments:" in line:
-#             line = myfile.readline()
-#             while(line.strip() != ""):
-#                 temp = [x for x in line.strip().split(', ')]
-#                 partialAssign.append(temp)
-#                 line = myfile.readline()
-#             break
-
-#     myfile.close()
-
 
 def readInputFile(fileName):
-    myfile = open(fileName, 'r')    # Open input file
+    inputFile = open(fileName, 'r')    # Open input file
 
     while(True):
 
-        line = myfile.readline()
+        line = inputFile.readline()
 
         if "Game slots:" in line:
-            headerData(line, myfile, "Game slots:", gameSlots)
+            headerData(line, inputFile, gameSlots)
 
         if "Practice slots:" in line:
-            headerData(line, myfile, "Practice slots:", practiceSlots)
+            headerData(line, inputFile, practiceSlots)
 
         if "Games:" in line:
-            headerData(line, myfile, "Games:", games)
+            headerData(line, inputFile, games)
 
         if "Practices:" in line:
-            headerData(line, myfile, "Pratices:", practices)
+            headerData(line, inputFile, practices)
 
         if "Not compatible:" in line:
-            headerData(line, myfile, "Not compatible:", notCompatible)
+            headerData(line, inputFile, notCompatible)
 
         if "Unwanted:" in line:
-            headerData(line, myfile, "Unwanted:", unwanted)
+            headerData(line, inputFile, unwanted)
 
         if "Preferences:" in line:
-            headerData(line, myfile, "Preferences:", preferences)
+            headerData(line, inputFile, preferences)
 
         if "Pair:" in line:
-            headerData(line, myfile, "Pair", pair)
+            headerData(line, inputFile, pair)
 
         if "Partial assignments:" in line:
-            headerData(line, myfile, "Partial assignments", partialAssign)
+            headerData(line, inputFile, partialAssign)
             break
 
-    myfile.close()
+    inputFile.close()
     
 
-def headerData (line, myfile, keyWord, arr):
+def headerData (line, inputFile, arr):
 
-    if keyWord in line:
-        line = myfile.readline()
+        line = inputFile.readline()
         while(line.strip() != ""):
             temp = [x for x in line.strip().split(', ')]
             arr.append(temp)
-            line = myfile.readline()
+            line = inputFile.readline()
 
 
 # Just to check
